@@ -16,15 +16,8 @@ class StudentController extends Controller
 
     public function addNewStudent(Request $request)
     {
-        try {
-            return Student::create(
-                $request->all()
-            );
-        } catch (\Exception $ex){
-            return [
-                'status' => 'Error',
-                'message' => $ex->getMessage(),
-            ];
-        }
+        return Student::create(
+            $request->all()
+        );
     }
 }
