@@ -22,3 +22,4 @@ Route::get('getUsers', 'Api\UserController@getUsers');
 
 Route::get('getStudents', 'Api\StudentController@getStudents');
 Route::post('addNewStudent', 'Api\StudentController@addNewStudent');
+Route::put('updateStudent', 'Api\StudentController@updateStudent');

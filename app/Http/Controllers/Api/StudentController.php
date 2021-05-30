@@ -20,4 +20,14 @@ class StudentController extends Controller
             $request->all()
         );
     }
+
+    public function updateStudent(Request $request)
+    {
+        $student = Student::find($request->id);
+        $student->update([
+            'name' => $request->name ? $request->name : $student->name,
+            'grade' => $request->grade ? $request->grade : $student->grade,
+        ]);
+        return $student;
+    }
 }
