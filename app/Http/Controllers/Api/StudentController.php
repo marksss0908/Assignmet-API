@@ -35,6 +35,17 @@ class StudentController extends Controller
     {
         $student = Student::find($request->id);
         $student->destroy($request->id);
-        return $student;
+        
+        // return $student;
+
+        $result = [
+            "record" => [
+                $student
+            ],
+            "message" => "Record Deleted.",
+            "message2" => 1 + 1
+        ];
+
+        return $result;
     }
 }
